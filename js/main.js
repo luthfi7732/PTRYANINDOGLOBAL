@@ -73,57 +73,73 @@ if (contactForm) {
     });
 }
 
-// Dynamic Content Loading (for CMS integration)
+// Dynamic Content Loading from Netlify CMS
 async function loadJobs() {
     try {
-        // This will be replaced with actual CMS data loading
         const jobsContainer = document.getElementById('jobs-container');
         if (!jobsContainer) return;
+
+        // Load jobs from Netlify CMS
+        const response = await fetch('/content/jobs.json');
+        let jobs = [];
         
-        // Sample job data - will be replaced with CMS data
-        const jobs = [
-            {
-                title: "Chief Officer",
-                company: "Royal Caribbean International",
-                location: "International Waters",
-                salary: "$4,500 - $6,000 USD",
-                type: "Full Time",
-                description: "Seeking experienced Chief Officer for luxury cruise operations."
-            },
-            {
-                title: "2nd Engineer",
-                company: "Maersk Line",
-                location: "Global Routes",
-                salary: "$5,000 - $7,000 USD",
-                type: "Contract",
-                description: "Marine engineer needed for container vessel operations."
-            },
-            {
-                title: "Able Seaman",
-                company: "MSC Cruises",
-                location: "Mediterranean Sea",
-                salary: "$2,500 - $3,500 USD",
-                type: "Full Time",
-                description: "Experienced AB for cruise ship deck department."
-            }
-        ];
-        
+        if (response.ok) {
+            jobs = await response.json();
+        } else {
+            // Fallback to sample data if no CMS data
+            jobs = [
+                {
+                    title: "Chief Officer",
+                    company: "Royal Caribbean International",
+                    location: "International Waters",
+                    salary: "$4,500 - $6,000 USD",
+                    type: "Full Time",
+                    description: "Seeking experienced Chief Officer for luxury cruise operations."
+                },
+                {
+                    title: "2nd Engineer",
+                    company: "Maersk Line",
+                    location: "Global Routes",
+                    salary: "$5,000 - $7,000 USD",
+                    type: "Contract",
+                    description: "Marine engineer needed for container vessel operations."
+                },
+                {
+                    title: "Able Seaman",
+                    company: "MSC Cruises",
+                    location: "Mediterranean Sea",
+                    salary: "$2,500 - $3,500 USD",
+                    type: "Full Time",
+                    description: "Experienced AB for cruise ship deck department."
+                }
+            ];
+        }
+
+        if (jobs.length === 0) {
+            jobsContainer.innerHTML = '<p class="no-data">Belum ada lowongan kerja yang tersedia.</p>';
+            return;
+        }
+
         jobsContainer.innerHTML = jobs.map(job => `
             <div class="job-card">
-                <h3 class="job-title">${job.title}</h3>
-                <p class="job-company">${job.company}</p>
+                <h3 class="job-title">${job.title || 'Posisi Kosong'}</h3>
+                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
                 <div class="job-details">
-                    <p><i class="fas fa-map-marker-alt"></i> ${job.location}</p>
-                    <p><i class="fas fa-briefcase"></i> ${job.type}</p>
+                    <p><i class="fas fa-map-marker-alt"></i> ${job.location || 'Lokasi Tidak Diketahui'}</p>
+                    <p><i class="fas fa-briefcase"></i> ${job.type || 'Full Time'}</p>
                 </div>
-                <p class="job-description">${job.description}</p>
-                <p class="job-salary"><i class="fas fa-dollar-sign"></i> ${job.salary}</p>
+                <p class="job-description">${job.description || 'Deskripsi pekerjaan tidak tersedia.'}</p>
+                <p class="job-salary"><i class="fas fa-dollar-sign"></i> ${job.salary || 'Gaji Kompetitif'}</p>
                 <button class="apply-btn" onclick="applyJob('${job.title}')">Lamar Sekarang</button>
             </div>
         `).join('');
         
     } catch (error) {
         console.error('Error loading jobs:', error);
+        const jobsContainer = document.getElementById('jobs-container');
+        if (jobsContainer) {
+            jobsContainer.innerHTML = '<p class="error">Gagal memuat lowongan kerja. Silakan coba lagi nanti.</p>';
+        }
     }
 }
 
@@ -131,40 +147,57 @@ async function loadTestimonials() {
     try {
         const testimonialsContainer = document.getElementById('testimonials-container');
         if (!testimonialsContainer) return;
+
+        // Load testimonials from Netlify CMS
+        const response = await fetch('/content/testimonials.json');
+        let testimonials = [];
         
-        // Sample testimonials - will be replaced with CMS data
-        const testimonials = [
-            {
-                name: "Capt. Budi Santoso",
-                position: "Master Mariner",
-                text: "Saya sangat berterima kasih kepada Ryanindo Global Samudera yang telah membantu saya mendapatkan posisi sebagai Master di kapal pesiar mewah. Prosesnya sangat profesional dan cepat.",
-                avatar: "BS"
-            },
-            {
-                name: "Sarah Wijaya",
-                position: "Chief Engineer",
-                text: "Pelayanan yang sangat memuaskan! Tim Ryanindo sangat membantu dalam proses dokumentasi dan interview. Sekarang saya bekerja di kapal kargo internasional dengan gaji yang kompetitif.",
-                avatar: "SW"
-            },
-            {
-                name: "Andi Prasetyo",
-                position: "2nd Officer",
-                text: "Rekomendasi terbaik untuk agency pelayaran! Mereka tidak hanya membantu mendapatkan pekerjaan, tapi juga memberikan training yang sangat berguna.",
-                avatar: "AP"
-            }
-        ];
-        
+        if (response.ok) {
+            testimonials = await response.json();
+        } else {
+            // Fallback to sample data if no CMS data
+            testimonials = [
+                {
+                    name: "Capt. Budi Santoso",
+                    position: "Master Mariner",
+                    text: "Saya sangat berterima kasih kepada Ryanindo Global Samudera yang telah membantu saya mendapatkan posisi sebagai Master di kapal pesiar mewah. Prosesnya sangat profesional dan cepat.",
+                    avatar: "BS"
+                },
+                {
+                    name: "Sarah Wijaya",
+                    position: "Chief Engineer",
+                    text: "Pelayanan yang sangat memuaskan! Tim Ryanindo sangat membantu dalam proses dokumentasi dan interview. Sekarang saya bekerja di kapal kargo internasional dengan gaji yang kompetitif.",
+                    avatar: "SW"
+                },
+                {
+                    name: "Andi Prasetyo",
+                    position: "2nd Officer",
+                    text: "Rekomendasi terbaik untuk agency pelayaran! Mereka tidak hanya membantu mendapatkan pekerjaan, tapi juga memberikan training yang sangat berguna.",
+                    avatar: "AP"
+                }
+            ];
+        }
+
+        if (testimonials.length === 0) {
+            testimonialsContainer.innerHTML = '<p class="no-data">Belum ada testimoni yang tersedia.</p>';
+            return;
+        }
+
         testimonialsContainer.innerHTML = testimonials.map(testimonial => `
             <div class="testimonial-card">
-                <div class="testimonial-avatar">${testimonial.avatar}</div>
-                <p class="testimonial-text">"${testimonial.text}"</p>
-                <h4 class="testimonial-author">${testimonial.name}</h4>
-                <p class="testimonial-position">${testimonial.position}</p>
+                <div class="testimonial-avatar">${testimonial.avatar || testimonial.name.charAt(0)}</div>
+                <p class="testimonial-text">"${testimonial.text || 'Testimoni tidak tersedia.'}"</p>
+                <h4 class="testimonial-author">${testimonial.name || 'Anonim'}</h4>
+                <p class="testimonial-position">${testimonial.position || 'Posisi Tidak Diketahui'}</p>
             </div>
         `).join('');
         
     } catch (error) {
         console.error('Error loading testimonials:', error);
+        const testimonialsContainer = document.getElementById('testimonials-container');
+        if (testimonialsContainer) {
+            testimonialsContainer.innerHTML = '<p class="error">Gagal memuat testimoni. Silakan coba lagi nanti.</p>';
+        }
     }
 }
 
