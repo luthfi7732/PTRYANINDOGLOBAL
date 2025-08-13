@@ -5,8 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin - PT RYANINDO GLOBAL SAMUDERA</title>
     <link rel="stylesheet" href="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.css" />
+    <script>
+        // Konfigurasi untuk menerima response invite dan forgot password
+        window.netlifyIdentity = {
+            on: function(event, callback) {
+                if (event === 'login') {
+                    console.log('User logged in:', callback);
+                } else if (event === 'logout') {
+                    console.log('User logged out');
+                } else if (event === 'error') {
+                    console.error('Error:', callback);
+                } else if (event === 'open') {
+                    console.log('Login modal opened');
+                } else if (event === 'close') {
+                    console.log('Login modal closed');
+                } else if (event === 'passwordRecovery') {
+                    console.log('Password recovery initiated');
+                }
+            }
+        };
+    </script>
 </head>
 <body>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+    
+    <script>
+        // Script untuk menerima response invite dan forgot password
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on('init', user => {
+                if (!user) {
+                    window.netlifyIdentity.on('login', () => {
+                        document.location.reload();
+                    });
+                }
+            });
+            
+            window.netlifyIdentity.on('invite', () => {
+                console.log('Invite accepted successfully');
+                document.location.reload();
+            });
+            
+            window.netlifyIdentity.on('passwordRecovery', () => {
+                console.log('Password recovery email sent');
+            });
+            
+            window.netlifyIdentity.on('error', err => {
+                console.error('Error:', err);
+            });
+            
+            // Enable forgot password functionality
+            window.netlifyIdentity.on('init', () => {
+                const forgotPasswordLink = document.querySelector('.forgot-password-link');
+                if (forgotPasswordLink) {
+                    forgotPasswordLink.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        window.netlifyIdentity.open('forgot');
+                    });
+                }
+            });
+        }
+    </script>
 </body>
 </html>
