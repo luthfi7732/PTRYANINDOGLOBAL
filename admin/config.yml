@@ -1,66 +1,674 @@
 backend:
   name: git-gateway
   branch: main
-
-media_folder: "assets/uploads"
-public_folder: "/assets/uploads"
-
-collections:
-  - name: "jobs"
-    label: "Lowongan Kerja"
-    folder: "content/jobs"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - {label: "Judul Posisi", name: "title", widget: "string"}
-      - {label: "Perusahaan", name: "company", widget: "string"}
-      - {label: "Lokasi", name: "location", widget: "string"}
-      - {label: "Tipe Pekerjaan", name: "type", widget: "select", options: ["Full Time", "Part Time", "Contract", "Internship"]}
-      - {label: "Gaji", name: "salary", widget: "string"}
-      - {label: "Deskripsi Pekerjaan", name: "description", widget: "text"}
-      - {label: "Persyaratan", name: "requirements", widget: "list"}
-      - {label: "Benefit", name: "benefits", widget: "list"}
-      - {label: "Tanggal Diposting", name: "date", widget: "datetime"}
-      - {label: "Status", name: "status", widget: "select", options: ["Open", "Closed"], default: "Open"}
-      - {label: "Gambar", name: "image", widget: "image", required: false}
-
-  - name: "testimonials"
-    label: "Testimoni"
-    folder: "content/testimonials"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - {label: "Nama Pelaut", name: "name", widget: "string"}
-      - {label: "Posisi/Jabatan", name: "position", widget: "string"}
-      - {label: "Foto", name: "image", widget: "image", required: false}
-      - {label: "Testimoni", name: "text", widget: "text"}
-      - {label: "Rating", name: "rating", widget: "number", value_type: "int", min: 1, max: 5, default: 5}
-      - {label: "Tanggal", name: "date", widget: "datetime"}
-
-  - name: "settings"
-    label: "Pengaturan Website"
-    files:
-      - name: "general"
-        label: "Pengaturan Umum"
-        file: "content/settings/general.json"
-        fields:
-          - {label: "Nama Perusahaan", name: "company_name", widget: "string"}
-          - {label: "Tagline", name: "tagline", widget: "string"}
-          - {label: "Alamat", name: "address", widget: "text"}
-          - {label: "Telepon", name: "phone", widget: "string"}
-          - {label: "Email", name: "email", widget: "string"}
-          - {label: "Jam Kerja", name: "working_hours", widget: "string"}
-          - {label: "Logo", name: "logo", widget: "image"}
-          - {label: "Meta Description", name: "meta_description", widget: "text"}
-          - {label: "Meta Keywords", name: "meta_keywords", widget: "list"}
-
-  - name: "pages"
-    label: "Halaman"
-    files:
-      - name: "about"
-        label: "Tentang Kami"
-        file: "content/pages/about.md"
-        fields:
-          - {label: "Judul", name: "title", widget: "string"}
-          - {label: "Konten", name: "body", widget: "markdown"}
-          - {label: "Gambar", name: "image", widget: "image", required: false}
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
+  branch: main
++            <div class="job-card">
++                <h3 class="job-title">${job.title || 'Posisi Kosong'}</h3>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <div class="job-details">
++                    <p><i class="fas fa-map-marker-alt"></i> ${job.location || 'Lokasi Tidak Diketahui'}</p>
++                    <p><i class="fas fa-briefcase"></i> ${job.type || 'Full Time'}</p>
++                </div>
++                <p class="job-description">${job.description || 'Deskripsi pekerjaan tidak tersedia.'}</p>
++                <p class="job-salary"><i class="fas fa-dollar-sign"></i> ${job.salary || 'Gaji Kompetitif'}</p>
++                <button class="apply-btn" onclick="applyJob('${job.title}')">Lamar Sekarang</button>
++            </div>
++            <div class="job-card">
++                <h3 class="job-title">${job.title || 'Posisi Kosong'}</h3>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <div class="job-details">
++                    <p><i class="fas fa-map-marker-alt"></i> ${job.location || 'Lokasi Tidak Diketahui'}</p>
++                    <p><i class="fas fa-briefcase"></i> ${job.type || 'Full Time'}</p>
++                </div>
++                <p class="job-description">${job.description || 'Deskripsi pekerjaan tidak tersedia.'}</p>
++                <p class="job-salary"><i class="fas fa-dollar-sign"></i> ${job.salary || 'Gaji Kompetitif'}</p>
++                <button class="apply-btn" onclick="applyJob('${job.title}')">Lamar Sekarang</button>
++            </div>
++            <div class="job-card">
++                <h3 class="job-title">${job.title || 'Posisi Kosong'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <div class="job-details">
++                    <p><i class="fas fa-map-marker-alt"></i> ${job.location || 'Lokasi Tidak Diketahui'}</p>
++                <p class="job-description">${job.description || 'Deskripsi pekerjaan tidak tersedia.'}</p>
++                <p class="job-salary"><i class="fas fa-dollar-sign"></i> ${job.salary || 'Gaji Kompetitif'}</p>
++                <button class="apply-btn" onclick="applyJob('${job.title}')">Lamar Sekarang</button>
++            </div>
++            <div class="job-card">
++                <h3 class="job-title">${job.title || 'Posisi Kosong'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <div class="job-details">
++                    <p><i class="fas fa-map-marker-alt"></i> ${job.location || 'Lokasi Tidak Diketahui'}</p>
++                <p class="job-description">${job.description || 'Deskripsi pekerjaan tidak tersedia.'}</p>
++                <p class="job-salary"><i class="fas fa-dollar-sign"></i> ${job.salary || 'Gaji Kompetitif'}</p>
++                <button class="apply-btn" onclick="applyJob('${job.title}')">Lamar Sekarang</button>
++            </div>
++            <div class="job-card">
++                <h3 class="job-title">${job.title || 'Posisi Kosong'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <div class="job-details">
++                    <p><i class="fas fa-map-marker-alt"></i> ${job.location || 'Lokasi Tidak Diketahui'}</p>
++                <p class="job-description">${job.description || 'Deskripsi pekerjaan tidak tersedia.'}</p>
++                <p class="job-salary"><i class="fas fa-dollar-sign"></i> ${job.salary || 'Gaji Kompetitif'}</p>
++                <button class="apply-btn" onclick="applyJob('${job.title}')">Lamar Sekarang</button>
++            </div>
++            <div class="job-card">
++                <h3 class="job-title">${job.title || 'Posisi Kosong'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <div class="job-details">
++                    <p><i class="fas fa-map-marker-alt"></i> ${job.location || 'Lokasi Tidak Diketahui'}</p>
++                <p class="job-description">${job.description || 'Deskripsi pekerjaan tidak tersedia.'}</p>
++                <p class="job-salary"><i class="fas fa-dollar-sign"></i> ${job.salary || 'Gaji Kompetitif'}</p>
++                <button class="apply-btn" onclick="applyJob('${job.title}')">Lamar Sekarang</button>
++            </div>
++            <div class="job-card">
++                <h3 class="job-title">${job.title || 'Posisi Kosong'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <div class="job-details">
++                    <p><i class="fas fa-map-marker-alt"></i> ${job.location || 'Lokasi Tidak Diketahui'}</p>
++                <p class="job-description">${job.description || 'Deskripsi pekerjaan tidak tersedia.'}</p>
++                <p class="job-salary"><i class="fas fa-dollar-sign"></i> ${job.salary || 'Gaji Kompetitif'}</p>
++                <button class="apply-btn" onclick="applyJob('${job.title}')">Lamar Sekarang</button>
++            </div>
++            <div class="job-card">
++                <h3 class="job-title">${job.title || 'Posisi Kosong'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <div class="job-details">
++                    <p><i class="fas fa-map-marker-alt"></i> ${job.location || 'Lokasi Tidak Diketahui'}</p>
++                <p class="job-description">${job.description || 'Deskripsi pekerjaan tidak tersedia.'}</p>
++                <p class="job-salary"><i class="fas fa-dollar-sign"></i> ${job.salary || 'Gaji Kompetitif'}</p>
++                <button class="apply-btn" onclick="applyJob('${job.title}')">Lamar Sekarang</button>
++            </div>
++            <div class="job-card">
++                <h3 class="job-title">${job.title || 'Posisi Kosong'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <div class="job-details">
++                    <p><i class="fas fa-map-marker-alt"></i> ${job.location || 'Lokasi Tidak Diketahui'}</p>
++                <p class="job-description">${job.description || 'Deskripsi pekerjaan tidak tersedia.'}</p>
++                <p class="job-salary"><i class="fas fa-dollar-sign"></i> ${job.salary || 'Gaji Kompetitif'}</p>
++                <button class="apply-btn" onclick="applyJob('${job.title}')">Lamar Sekarang</button>
++            </div>
++            <div class="job-card">
++                <h3 class="job-title">${job.title || 'Posisi Kosong'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <div class="job-details">
++                    <p><i class="fas fa-map-marker-alt"></i> ${job.location || 'Lokasi Tidak Diketahui'}</p>
++                <p class="job-description">${job.description || 'Deskripsi pekerjaan tidak tersedia.'}</p>
++                <p class="job-salary"><i class="fas fa-dollar-sign"></i> ${job.salary || 'Gaji Kompetitif'}</p>
++                <button class="apply-btn" onclick="applyJob('${job.title}')">Lamar Sekarang</button>
++            </div>
++            <div class="job-card">
++                <h3 class="job-title">${job.title || 'Posisi Kosong'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <div class="job-details">
++                    <p><i class="fas fa-map-marker-alt"></i> ${job.location || 'Lokasi Tidak Diketahui'}</p>
++                <p class="job-description">${job.description || 'Deskripsi pekerjaan tidak tersedia.'}</p>
++                <p class="job-salary"><i class="fas fa-dollar-sign"></i> ${job.salary || 'Gaji Kompetitif'}</p>
++                <button class="apply-btn" onclick="applyJob('${job.title}')">Lamar Sekarang</button>
++            </div>
++            <div class="job-card">
++                <h3 class="job-title">${job.title || 'Posisi Kosong'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <div class="job-details">
++                    <p><i class="fas fa-map-marker-alt"></i> ${job.location || 'Lokasi Tidak Diketahui'}</p>
++                <p class="job-description">${job.description || 'Deskripsi pekerjaan tidak tersedia.'}</p>
++                <p class="job-salary"><i class="fas fa-dollar-sign"></i> ${job.salary || 'Gaji Kompetitif'}</p>
++                <button class="apply-btn" onclick="applyJob('${job.title}')">Lamar Sekarang</button>
++            </div>
++            <div class="job-card">
++                <h3 class="job-title">${job.title || 'Posisi Kosong'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <div class="job-details">
++                    <p><i class="fas fa-map-marker-alt"></i> ${job.location || 'Lokasi Tidak Diketahui'}</p>
++                <p class="job-description">${job.description || 'Deskripsi pekerjaan tidak tersedia.'}</p>
++                <p class="job-salary"><i class="fas fa-dollar-sign"></i> ${job.salary || 'Gaji Kompetitif'}</p>
++                <button class="apply-btn" onclick="applyJob('${job.title}')">Lamar Sekarang</button>
++            </div>
++            <div class="job-card">
++                <h3 class="job-title">${job.title || 'Posisi Kosong'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <div class="job-details">
++                    <p><i class="fas fa-map-marker-alt"></i> ${job.location || 'Lokasi Tidak Diketahui'}</p>
++                <p class="job-description">${job.description || 'Deskripsi pekerjaan tidak tersedia.'}</p>
++                <p class="job-salary"><i class="fas fa-dollar-sign"></i> ${job.salary || 'Gaji Kompetitif'}</p>
++                <button class="apply-btn" onclick="applyJob('${job.title}')">Lamar Sekarang</button>
++            </div>
++            <div class="job-card">
++                <h3 class="job-title">${job.title || 'Posisi Kosong'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <div class="job-details">
++                    <p><i class="fas fa-map-marker-alt"></i> ${job.location || 'Lokasi Tidak Diketahui'}</p>
++                <p class="job-description">${job.description || 'Deskripsi pekerjaan tidak tersedia.'}</p>
++                <p class="job-salary"><i class="fas fa-dollar-sign"></i> ${job.salary || 'Gaji Kompetitif'}</p>
++                <button class="apply-btn" onclick="applyJob('${job.title}')">Lamar Sekarang</button>
++            </div>
++            <div class="job-card">
++                <h3 class="job-title">${job.title || 'Posisi Kosong'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <div class="job-details">
++                    <p><i class="fas fa-map-marker-alt"></i> ${job.location || 'Lokasi Tidak Diketahui'}</p>
++                <p class="job-description">${job.description || 'Deskripsi pekerjaan tidak tersedia.'}</p>
++                <p class="job-salary"><i class="fas fa-dollar-sign"></i> ${job.salary || 'Gaji Kompetitif'}</p>
++                <button class="apply-btn" onclick="applyJob('${job.title}')">Lamar Sekarang</button>
++            </div>
++            <div class="job-card">
++                <h3 class="job-title">${job.title || 'Posisi Kosong'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <div class="job-details">
++                    <p><i class="fas fa-map-marker-alt"></i> ${job.location || 'Lokasi Tidak Diketahui'}</p>
++                <p class="job-description">${job.description || 'Deskripsi pekerjaan tidak tersedia.'}</p>
++                <p class="job-salary"><i class="fas fa-dollar-sign"></i> ${job.salary || 'Gaji Kompetitif'}</p>
++                <button class="apply-btn" onclick="applyJob('${job.title}')">Lamar Sekarang</button>
++            </div>
++            <div class="job-card">
++                <h3 class="job-title">${job.title || 'Posisi Kosong'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <div class="job-details">
++                    <p><i class="fas fa-map-marker-alt"></i> ${job.location || 'Lokasi Tidak Diketahui'}</p>
++                <p class="job-description">${job.description || 'Deskripsi pekerjaan tidak tersedia.'}</p>
++                <p class="job-salary"><i class="fas fa-dollar-sign"></i> ${job.salary || 'Gaji Kompetitif'}</p>
++                <button class="apply-btn" onclick="applyJob('${job.title}')">Lamar Sekarang</button>
++            </div>
++            <div class="job-card">
++                <h3 class="job-title">${job.title || 'Posisi Kosong'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <div class="job-details">
++                    <p><i class="fas fa-map-marker-alt"></i> ${job.location || 'Lokasi Tidak Diketahui'}</p>
++                <p class="job-description">${job.description || 'Deskripsi pekerjaan tidak tersedia.'}</p>
++                <p class="job-salary"><i class="fas fa-dollar-sign"></i> ${job.salary || 'Gaji Kompetitif'}</p>
++                <button class="apply-btn" onclick="applyJob('${job.title}')">Lamar Sekarang</button>
++            </div>
++            <div class="job-card">
++                <h3 class="job-title">${job.title || 'Posisi Kosong'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <div class="job-details">
++                    <p><i class="fas fa-map-marker-alt"></i> ${job.location || 'Lokasi Tidak Diketahui'}</p>
++                <p class="job-description">${job.description || 'Deskripsi pekerjaan tidak tersedia.'}</p>
++                <p class="job-salary"><i class="fas fa-dollar-sign"></i> ${job.salary || 'Gaji Kompetitif'}</p>
++                <button class="apply-btn" onclick="applyJob('${job.title}')">Lamar Sekarang</button>
++            </div>
++            <div class="job-card">
++                <h3 class="job-title">${job.title || 'Posisi Kosong'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <div class="job-details">
++                    <p><i class="fas fa-map-marker-alt"></i> ${job.location || 'Lokasi Tidak Diketahui'}</p>
++                <p class="job-description">${job.description || 'Deskripsi pekerjaan tidak tersedia.'}</p>
++                <p class="job-salary"><i class="fas fa-dollar-sign"></i> ${job.salary || 'Gaji Kompetitif'}</p>
++                <button class="apply-btn" onclick="applyJob('${job.title}')">Lamar Sekarang</button>
++            </div>
++            <div class="job-card">
++                <h3 class="job-title">${job.title || 'Posisi Kosong'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company || 'Perusahaan Tidak Diketahui'}</p>
++                <p class="job-company">${job.company
